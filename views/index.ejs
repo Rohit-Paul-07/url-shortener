@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener Project</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            align-items: center;
+            background-color: rgb(43, 177, 226);
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .container {
+
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            background-color: rgb(50, 152, 128);
+            box-shadow: 6px 3px 14px 11px rgba(0, 0, 1, 0.4)
+        }
+
+        h1 {
+            padding: 13px;
+            font-size: 39px;
+            color: #3e0a81;
+        }
+
+        label{
+            font-size: 29px;
+            color: #060a4e;
+        }
+
+        #longURL {
+            font-size: 18px;
+            text-align: center;
+            width: 100%;
+            border-radius: 8px;
+            border: none;
+            padding: 2px;
+        }
+
+
+        button {
+            font-size: 20px;
+            background-color: rgb(179 22 160);
+            color: #36f425;
+            cursor: pointer;
+            transition: 0.5s;
+            padding: 7px;
+            border-radius: 20px;
+            border: none;
+            box-shadow: 3px 0px 11px rgba(0, 0, 0, 1.1);
+        }
+
+        button:hover {
+            background-color: rgb(6, 211, 230);
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>URL SHORTENER</h1>
+        <form action="/url_shorten" method="post">
+
+            <label for="longURL">Long URL</label><br><br>
+            <input type="text" name="longURL" id="longURL" placeholder="enter your URL" required><br><br>
+
+            <button type="submit">Shorten The URL</button><br><br>
+
+        </form>
+        <% if(shortUrl){ %>
+        <p>Short URL :- <a href="<%= shortUrl %>" target="_blank" >
+        <%= shortUrl %>
+        </p> <% } %>
+        
+
+    </div>
+
+</body>
+
+</html>
